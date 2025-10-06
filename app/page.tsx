@@ -7,9 +7,9 @@ import FloorPlansSection from "@/components/floor-plans-section"
 import { PropertyFeaturesSection } from "@/components/property-features-section"
 import BetterBondSection from "@/components/betterbond-section"
 import { ContactLocationSection } from "@/components/contact-location-section"
-// import { ChatWidget } from "@/components/chat-widget"
 import { WhatsAppButton } from "@/components/whatsapp-button"
 import { Footer } from "@/components/footer"
+import ClientOnly from "./components/ClientOnly"
 
 export default function HomePage() {
   return (
@@ -30,7 +30,9 @@ export default function HomePage() {
         <HeroSection />
         <VideoSection />
         <FeaturesSection />
-        <UnitsCarousel />
+        <ClientOnly>
+          <UnitsCarousel />
+        </ClientOnly>
         <FloorPlansSection />
         <PropertyFeaturesSection />
         <BetterBondSection />
