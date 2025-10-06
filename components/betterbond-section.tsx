@@ -11,7 +11,7 @@ export default function BetterBondSection() {
           width={300}
           height={100}
           priority
-          className="mx-auto mb-6 h-auto w-auto"
+          className="mx-auto mb-6"
         />
         <h2 className="mb-4 text-2xl font-bold text-gray-800">
           Simplify Your Home Loan Application

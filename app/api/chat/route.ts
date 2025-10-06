@@ -1,4 +1,6 @@
-﻿import { NextRequest } from "next/server";
+import { NextRequest } from "next/server";
+import fs from "fs";
+import path from "path";
 
 export async function POST(req: NextRequest) {
   try {
@@ -19,12 +21,14 @@ export async function POST(req: NextRequest) {
       });
     }
 
+    const knowledge = fs.readFileSync(
+      path.join(process.cwd(), "data", "chatbot-knowledge.txt"),
+      "utf-8"
+    );
+
     const sys = {
       role: "system",
-      content:
-        "You are Cornerstone on Arum's property sales assistant in Table View, Cape Town. " +
-        "Be concise, friendly, and practical. If you do not know something, say you will ask the sales team. " +
-        "Always offer to help with viewings and finance. Currency is ZAR.",
+      content: knowledge,
     };
 
     const resp = await fetch("https://api.openai.com/v1/chat/completions", {
