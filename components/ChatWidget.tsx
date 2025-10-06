@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 
 type Msg = { role: "user" | "assistant"; content: string };
 
-export default function ChatWidget() {
+export default function ChatWidget({ onClose }: { onClose: () => void }) {
   const [messages, setMessages] = useState<Msg[]>([
     {
       role: "assistant",
@@ -82,7 +82,7 @@ export default function ChatWidget() {
         }}
       >
         <div style={{ fontWeight: 700 }}>Cornerstone Assistant</div>
-        <nav style={{ display: "flex", gap: 8 }}>
+        <nav style={{ display: "flex", gap: 8, alignItems: 'center' }}>
           <a
             href="https://digiapp.betterbond.co.za/YolandaKensley/38613/129015"
             target="_blank"
@@ -91,12 +91,9 @@ export default function ChatWidget() {
           >
             100% Home Loans
           </a>
-          <a href="#units" style={cta()}>
-            View Apartments
-          </a>
-          <a href="#enquire" style={cta()}>
-            Book a Viewing
-          </a>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', color: 'white', cursor: 'pointer', fontSize: '24px', padding: '0 8px' }} aria-label="Close chat">
+            &times;
+          </button>
         </nav>
       </header>
 
@@ -126,9 +123,13 @@ export default function ChatWidget() {
                 background: m.role === "user" ? "#2563eb" : "#fff",
                 color: m.role === "user" ? "#fff" : "#111",
                 border:
-                  m.role === "user" ? "none" : "1px solid rgba(0,0,0,0.08)",
+                  m.role === "user"
+                    ? "none"
+                    : "1px solid rgba(0,0,0,0.08)",
                 boxShadow:
-                  m.role === "user" ? "none" : "0 1px 3px rgba(0,0,0,0.06)",
+                  m.role === "user"
+                    ? "none"
+                    : "0 1px 3px rgba(0,0,0,0.06)",
                 whiteSpace: "pre-wrap",
               }}
             >
