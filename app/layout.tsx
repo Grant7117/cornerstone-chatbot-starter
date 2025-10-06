@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import './globals.css';
 
 import ClientOnly from './components/ClientOnly';
-import ChatLauncher from './components/ChatLauncher'; // <-- your existing launcher (must be a client component)
+import ChatLauncher from './components/ChatLauncher';
 
 export const metadata: Metadata = {
   title: 'Cornerstone on Arum',
