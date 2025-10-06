@@ -17,8 +17,10 @@ export default function ChatWidget({ onClose }: { onClose: () => void }) {
   const scroller = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    scroller.current?.scrollTo({ top: 9e6, behavior: "smooth" });
-  }, [messages.length]);
+    if (scroller.current) {
+      scroller.current.scrollTop = scroller.current.scrollHeight;
+    }
+  }, [messages]);
 
   async function send() {
     const t = text.trim();
