@@ -2,6 +2,17 @@ import { NextRequest } from "next/server";
 import fs from "fs";
 import path from "path";
 
+// Read the knowledge file once when the module is loaded
+const knowledge = fs.readFileSync(
+  path.join(process.cwd(), "data", "chatbot-knowledge.txt"),
+  "utf-8"
+);
+
+const sys = {
+  role: "system",
+  content: knowledge,
+};
+
 export async function POST(req: NextRequest) {
   try {
     const { messages } = await req.json();
@@ -20,16 +31,6 @@ export async function POST(req: NextRequest) {
         headers: { "Content-Type": "application/json" },
       });
     }
-
-    const knowledge = fs.readFileSync(
-      path.join(process.cwd(), "data", "chatbot-knowledge.txt"),
-      "utf-8"
-    );
-
-    const sys = {
-      role: "system",
-      content: knowledge,
-    };
 
     const resp = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",

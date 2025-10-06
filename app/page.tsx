@@ -32,6 +32,8 @@ export default function HomePage() {
         <VideoSection />
         <FeaturesSection />
         <PropertyFeaturesSection />
+        <UnitsCarousel />
+        <BetterBondSection />
         <WiredSections />
         <ContactLocationSection />
         <WhatsAppButton />
