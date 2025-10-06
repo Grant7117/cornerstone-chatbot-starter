@@ -1,16 +1,15 @@
-import BetterBondSection from "@/components/betterbond-section";
-import FloorPlansSection from "@/components/floor-plans-section";
-import WiredSections from "@/components/WiredSections";
-import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
-import { VideoSection } from "@/components/video-section";
-import { FeaturesSection } from "@/components/features-section";
-import { UnitsCarousel } from "@/components/units-carousel";
-import { PropertyFeaturesSection } from "@/components/property-features-section";
-import { ContactLocationSection } from "@/components/contact-location-section";
-import { ChatWidgetContainer } from "@/components/ChatWidgetContainer";
-import { WhatsAppButton } from "@/components/whatsapp-button";
-import { Footer } from "@/components/footer";
+import { Navigation } from "@/components/navigation"
+import { HeroSection } from "@/components/hero-section"
+import { VideoSection } from "@/components/video-section"
+import { FeaturesSection } from "@/components/features-section"
+import { UnitsCarousel } from "@/components/units-carousel"
+import FloorPlansSection from "@/components/floor-plans-section"
+import { PropertyFeaturesSection } from "@/components/property-features-section"
+import BetterBondSection from "@/components/betterbond-section"
+import { ContactLocationSection } from "@/components/contact-location-section"
+// import { ChatWidget } from "@/components/chat-widget"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { Footer } from "@/components/footer"
 
 export default function HomePage() {
   return (
@@ -31,15 +30,15 @@ export default function HomePage() {
         <HeroSection />
         <VideoSection />
         <FeaturesSection />
-        <PropertyFeaturesSection />
         <UnitsCarousel />
+        <FloorPlansSection />
+        <PropertyFeaturesSection />
         <BetterBondSection />
-        <WiredSections />
         <ContactLocationSection />
         <WhatsAppButton />
-        <ChatWidgetContainer />
+        {/* <ChatWidget /> */}
         <Footer />
       </div>
     </main>
-  );
+  )
 }
