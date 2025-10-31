@@ -17,6 +17,7 @@ export default function FloorPlansSection() {
             width={1600}
             height={1000}
             className="h-auto w-full"
+            unoptimized
             priority
           />
         </div>
