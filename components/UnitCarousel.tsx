@@ -26,6 +26,7 @@ export default function UnitCarousel({ unit, images, caption }: Props) {
           width={1920}
           height={1200}
           className="h-auto w-full"
+          unoptimized
           priority={idx === 0}
         />
 

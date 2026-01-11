@@ -37,6 +37,7 @@ function Carousel({ unit }: { unit: 304 | 305 }) {
           width={1600}
           height={1000}
           className="h-auto w-full"
+          unoptimized
           priority={idx === 0}
         />
         <button
